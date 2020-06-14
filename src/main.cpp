@@ -4,6 +4,7 @@
 #include <map>
 #include <limits>
 
+//Function prototype
 std::string findLeet(std::string& input, std::map<char, const char*>& leet);
 
 int main() {
@@ -11,9 +12,9 @@ int main() {
 	std::map<char, const char*> leet{ {'a',"4"}, { 'b',"13",},{'c',"("},{'d',"[)"},{'e',"3"},{'f',"|="},{'g',"6"},{'h',"|-|"},
 		{ 'i',"|"},{'j',"_|"},{'k',"|<"}, {'l',"1"},{'m',"|Y|"},{'n',"/\\/"},{'o',"0"},{'p', "|>"},{'q',"0,"},{'r',"|2"},
 		{'s',"5"},{'t',"7"},{'u',"[_]"},{'v',"\\/"},{'w',"|^|"},{'x',"><"},{'y',"'/"},{'z',"2"} };
-	bool quit{ false };
+
 	char choice{};
-	do{
+	do {
 		std::cout << "\nEnter text to convert: ";
 		std::getline(std::cin, user_input);
 
@@ -24,10 +25,9 @@ int main() {
 		std::cin.clear();
 		std::cin >> choice;
 		choice = toupper(choice);
-		std::cin.clear();
+		std::cin.clear(); //to clear stream state cuz of getline
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	} while (choice != 'N');
-
 
 	std::cout << "\nExiting program..." << std::endl;
 	return 0;
